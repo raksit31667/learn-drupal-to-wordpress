@@ -1,0 +1,48 @@
+version: '3'
+services:
+  drupal:
+    image: nimmis/apache-php5
+    ports:
+      - '8080:80'
+    volumes:
+      - ./drupal-6.38:/var/www/html
+
+  mysql:
+    image: mysql:5.5
+    environment:
+      MYSQL_ROOT_PASSWORD: drupal
+      MYSQL_DATABASE: drupal
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql:/var/lib/mysql/:rw
+
+  mysql_wordpress:
+    image: mysql:8.0.27
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+    ports:
+      - '3307:3306'
+    volumes:
+      - mysql_wordpress:/var/lib/mysql/:rw
+
+  wordpress:
+    build:
+      context: .
+      dockerfile: wordpress.Dockerfile
+    ports:
+      - '8081:80'
+    environment:
+      WORDPRESS_DB_HOST: mysql_wordpress
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PORT: 3307
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wordpress:/var/www/html
+
+volumes:
+  mysql:
+  mysql_wordpress:
+  wordpress:
