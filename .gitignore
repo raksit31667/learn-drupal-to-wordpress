@@ -196,5 +196,8 @@ wp-config.php
 # uncomment the next line
 #/wp-content/themes
 
+# Drupal executables
+drupal-6.38
+drupal-6.38.tar.gz
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,drupal,wordpress
