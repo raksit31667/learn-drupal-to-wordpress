@@ -38,3 +38,73 @@ Install the [FG Drupal to WordPress](https://wordpress.org/plugins/fg-drupal-to-
 
 ### Migrate Drupal to Wordpress
 Follow the plugin instructions and Drupal pages and stories will be migrated to Wordpress pages and posts respectively.
+
+## References
+
+### Drupal-generated tables
+
+```text
+access
+actions
+actions_aid
+authmap
+batch
+blocks
+blocks_roles
+boxes
+cache
+cache_block
+cache_filter
+cache_form
+cache_menu
+cache_page
+comments
+files
+filter_formats
+filters
+flood
+history
+menu_custom
+menu_links
+menu_router
+node
+node_access
+node_comment_statistics
+node_counter
+node_revisions
+node_type
+permission
+role
+semaphore
+sessions
+system
+term_data
+term_hierarchy
+term_node
+term_relation
+term_synonym
+url_alias
+users
+users_roles
+variable
+vocabulary
+vocabulary_node_types
+watchdog
+```
+
+### Wordpress-generated tables
+
+```text
+wp_commentmeta
+wp_comments
+wp_links
+wp_options
+wp_postmeta
+wp_posts
+wp_term_relationships
+wp_term_taxonomy
+wp_termmeta
+wp_terms
+wp_usermeta
+wp_users
+```
